@@ -18,7 +18,7 @@ int main(void)
 		printf("greater than 5\n");
 	if (lsd == 0)
 		printf("0\n");
-	if (lsd < 6 && lsd is not 0)
+	if (lsd < 6 && lsd != 0)
 		printf("less than 6 and not 0\n");
 	return (0);
 }
