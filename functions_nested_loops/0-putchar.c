@@ -1,4 +1,9 @@
 #include "main.h"
+/**
+ * main - proto putchar
+ *
+ * Return: Always 0.
+ */
 int main(void)
 {
 	_putchar('_');
