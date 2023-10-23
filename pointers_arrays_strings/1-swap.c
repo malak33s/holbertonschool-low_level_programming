@@ -1,12 +1,10 @@
 #include <stdio.h>
 
 /**
- * swip the values of two integers.
+ * swap_int - swap the values of two integers.
  *
- *@a: An integer to swap
- *@b: Another integer to swap
- *
- * return: void
+ * @a: An integer to swap
+ * @b: Another integer to swap
  */
 void swap_int(int *a, int *b)
 {
