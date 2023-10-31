@@ -4,18 +4,18 @@
  * _puts_recursion - prints a string
  * @s: string a parameter
  *
- * Return: Nothing
+ * Return:
  */
 
 void _puts_recursion(char *s)
 {
-	int a = 0;
+	int i = 0;
 
-	if (*(s + a))
+	if (*(s + i))
 	{
-		putchar(*(s + a));
-		a++;
-		_puts_recursion(s + a);
+		putchar(*(s + i));
+		i++;
+		_puts_recursion(s + i);
 	}
 	else
 	{
