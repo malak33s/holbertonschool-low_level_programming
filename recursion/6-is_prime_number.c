@@ -31,7 +31,7 @@ int prime_num(int a, int b)
 {
 	if (a == b)
 	{
-		return(1);
+		return (1);
 	}
 	else if (a % b == 0)
 	{
@@ -41,5 +41,4 @@ int prime_num(int a, int b)
 	{
 		return (prime_num(a, b + 1));
 	}
-	
 }
