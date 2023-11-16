@@ -1,46 +1,83 @@
-#include <stdio.h>
 #include <stdlib.h>
 #include "dog.h"
 
 /**
- * new_dog - check the code
- *
- * @name :name
- * @age : age
- * @owner: owner
- *
- * Return: Always 0.
- */
+* _strdup - returns a pointer to a new string which is
+* a duplicate of the string str
+*
+* @str: string to duplicate
+*
+* Return: pointer to duplicate string or null if
+* insufficient memory was available
+*/
 
-dog_t *new_dog(char *name, float age, char *owner)
+char *_strdup(char *str)
 {
-	int index1 = 0;
-	int index2 = 0;
-	int i;
-	dog_t *new_dog;
+	unsigned int i = 0;
+	unsigned int j = 0;
 
-	while (name[index1])
-		index1++;
-	while (owner[index2])
-		index2++;
-	new_dog = malloc(sizeof(dog_t));
-	if (new_dog == NULL)
-		return (NULL);
-	new_dog->name = malloc(sizeof(name) * (index1 + 1));
-	new_dog->owner = malloc(sizeof(owner) * (index2 + 1));
-	new_dog->age = age;
-	if (new_dog->name == NULL || new_dog->owner == NULL)
+	char *str2;
+
+	if (str == NULL)
 	{
-		free(new_dog->owner);
-		free(new_dog->name);
-		free(new_dog);
 		return (NULL);
 	}
-	for (i = 0; i < index1 ; i++)
-		new_dog->name[i] = name[i];
-	for (i = 0; i < index2 ; i++)
-		new_dog->owner[i] = owner[i];
-	new_dog->name[index1] = '\0';
-	new_dog->owner[index2] = '\0';
-	return (new_dog);
+	while (str[i] != '\0')
+	{
+		i++;
+	}
+	str2 = malloc(sizeof(char) * (i + 1));
+
+	if (str2 == NULL)
+	{
+		return (NULL);
+	}
+
+	while (str[j] != '\0')
+	{
+		str2[j] = str[j];
+		j++;
+	}
+	str2[j] = 0;
+	return (str2);
+}
+
+/**
+* new_dog - creates a new dog
+*
+* @name: pointer to the name of the dog
+* @age: age of the dog
+* @owner: pointer to the owner of the dog
+*
+* Return: pointer to new string or NULL if it fails
+*/
+dog_t *new_dog(char *name, float age, char *owner)
+{
+	dog_t *new;
+	char *new_name;
+	char *new_owner;
+
+	new = malloc(sizeof(dog_t));
+	if (new == NULL)
+		return (NULL);
+
+	new_name = _strdup(name);
+	if (new_name == NULL)
+	{
+		free(new);
+		return (NULL);
+	}
+	new_owner = _strdup(owner);
+	if (new_owner == NULL)
+	{
+		free(new_name);
+		free(new);
+		return (NULL);
+	}
+
+	new->name = new_name;
+	new->age = age;
+	new->owner = new_owner;
+
+	return (new);
 }
