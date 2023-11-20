@@ -1,13 +1,27 @@
-#ifndef FUNCTION_POINTERS_H
-#define FUNCTION_POINTERS_H
-#include <stddef.h>
+#ifndef VARIADIC_FONCTIONS_H
+#define VARIADIC_FONCTIONS_H
 #include <stdarg.h>
-int sum_them_all(const unsigned int n, ...);
+#include <stdio.h>
+
+/**
+ * struct print - parameters to check and print
+ * @print: type
+ * @f: fonction to send to
+*/
+typedef struct print
+{
+char *print;
+void (*f)(va_list list);
+} print_t;
+
 int _putchar(char c);
+int sum_them_all(const unsigned int n, ...);
 void print_numbers(const char *separator, const unsigned int n, ...);
-void print_name(char *name, void (*f)(char *));
+void print_strings(const char *separator, const unsigned int n, ...);
+void print_int(va_list list);
+void print_char(va_list list);
+void print_float(va_list list);
+void print_str(va_list list);
 void print_all(const char * const format, ...);
-void array_iterator(int *array, size_t size, void (*action)(int));
-int int_index(int *array, int size, int (*cmp)(int));
 
 #endif
