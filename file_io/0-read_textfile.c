@@ -1,40 +1,36 @@
-#include <stdio.h>
-#include <stdlib.h>
-#incl6ude "main_h"
+#include "main.h"
 
 /**
- * read_textfile - that reads a text file and prints
- * @filename: variable pointer
- * @letters: size letters
- * Description: Write a function that reads a text file and prints it
- * to the POSIX standard output.
- * Return: the actual number of letters it could read and print, 0 otherwise
- */
+ * read_textfile - reads a text file and prints it to the POSIX stdout.
+ * @filename: pointer to the string to print.
+ * @letters: the number of letters it should read and print.
+ *
+ * Return: the actual number of letters it should read and print
+*/
 
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	ssize_t file, lett, w;
-	char *tx;
-
-	tx = malloc(letters);
-	if (tx == NULL)
-		return (0);
+	int fo, re, w;
+	char *buf;
 
 	if (filename == NULL)
 		return (0);
 
-	file = open(filename, O_RDONLY);
+	buf = malloc(sizeof(char) * letters);
+	if (buf == NULL)
+		return (0);
 
-	if (file == -1)
+	fo = open(filename, O_RDONLY);
+	re = read(fo, buf, letters);
+	w = write(STDOUT_FILENO, buf, re);
+	
+
+	if (fo == -1 || re == -1 || w == -1)
 	{
-		free(tx);
 		return (0);
 	}
 
-	lett = read(file, tx, letters);
-	w = write(STDOUT_FILENO, tx, lett);
-
-	fclose(file);
-
+	free(buf);
+	close(fo);	
 	return (w);
 }
