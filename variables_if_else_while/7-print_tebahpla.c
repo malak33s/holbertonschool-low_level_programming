@@ -14,6 +14,6 @@ int main(void)
 		apt--;
 	}
 	putchar('\n');
-	
+
 	return (0);
 }
