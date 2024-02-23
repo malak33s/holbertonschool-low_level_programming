@@ -3,39 +3,47 @@
  *times_table - print the 9 tables staring with 0.
  *
  *num: number
- *
- *
- *
  */
 void times_table(void)
 {
 	int num, sum;
 	int multi;
 
-	for (num = 1; num < 10; num ++)
+	for (num = 0; num <= 9; num++)
 	{
-		for(sum = 1; sum < 10; sum++)
+		for (sum = 0; sum <= 9; sum++)
 		{
 			multi = num * sum;
-			if ( sum == 0)
+
+			if (sum == 0)
 			{
-				_putchar(multi + 48);
+				if (num == 0)
+				{
+					_putchar(48);
+				}
+				else
+				{
+					_putchar(48);
+					_putchar(',');
+					_putchar(' ');
+				}
 			}
-			
-			if (multi < 10 && sum != 0)
-			{
-				_putchar(',');
-				_putchar(' ');
-				_putchar(multi + 48);
-			}
-			else if (multi >= 10)
-			{
-				_putchar(',');
-				_putchar(' ');
-				_putchar((multi / 10) + 48);
+				else
+				{
+					_putchar(',');
+					_putchar(' ');
+
+					if (multi < 10)
+					{
+						_putchar(' ');
+					}
+					else
+					{
+						_putchar((multi / 10) + 48);
+					}
 				_putchar((multi % 10) + 48);
-			}
-			_putchar('\n');
+				}
 		}
+		_putchar('\n');
 	}
 }
