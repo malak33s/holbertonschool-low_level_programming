@@ -15,10 +15,13 @@ int add(int num1, int num2)
 
 	sum = num1 + num2;
 
+	num1 = 'Y';
+
+	num2 = 57;
+
 	if (sum <= 48)
 	{
 		_putchar(sum);
-
 	}
 	return (sum);
 }
