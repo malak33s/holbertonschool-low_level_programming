@@ -2,17 +2,16 @@
 /**
  * print_numbers - function that prints the numbers.
  *
- *@n: the numbers.
  *
- * Return: 
+ * Return:
  */
 void print_numbers(void)
 {
-	int n;
-	
-	for (n = 0; n <= 9; n++)
+	int p;
+
+	for (p = 0; p <= 9; p++)
 	{
-		_putchar(n + '0');
+		_putchar(p + '0');
 	}
 	_putchar('\n');
 }
