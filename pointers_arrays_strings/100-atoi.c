@@ -3,16 +3,18 @@
 /**
  * _atoi - function that convert a string to an integer
  *
+ *@s: string.
  *
- *
+ * Return: value of posi
 */
 
 int _atoi(char *s)
 {
-	short boolean;
-	int var, negat, posi;
-	var = negat = posi = 0;
-	posi = -1;
+	int var, negat, posi, boolean;
+	
+	var = negat = posi = boolean = 0;
+	
+	negat = -1;
 
 	while (s[var] != '\0')
 	{
