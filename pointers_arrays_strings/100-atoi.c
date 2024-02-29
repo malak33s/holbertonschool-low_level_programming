@@ -11,9 +11,9 @@
 int _atoi(char *s)
 {
 	int var, negat, posi, boolean;
-	
+
 	var = negat = posi = boolean = 0;
-	
+
 	negat = -1;
 
 	while (s[var] != '\0')
