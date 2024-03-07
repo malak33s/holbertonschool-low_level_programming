@@ -6,13 +6,13 @@
  * @s: string to check
  * @accept: pointer to string
  *
- * Return: a pointer to the byte in s that matches one of the bytes in accept, or NULL if no such byte is found
+ * Return: a pointer to the byte in s that matches one of the bytes in accept;
  */
 char *_strpbrk(char *s, char *accept)
 {
 	int a;
 
-	while(*s)
+	while (*s)
 	{
 		for (a = 0; accept[a]; a++)
 		{
