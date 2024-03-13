@@ -1,7 +1,7 @@
 #include "main.h"
 /**
  * **alloc_grid - function that returns a 2 dimensional array of integers.
- * 
+ *
  * @width: integers of columns.
  * @height: integers of rows.
  *
