@@ -10,7 +10,7 @@
 char *_strdup(char *str)
 {
 	char *a;
-	unsigned int inte, size = 0;
+	unsigned int inter, size = 0;
 
 	if (str == NULL)
 		return (NULL);
@@ -58,6 +58,6 @@ dog_t *new_dog(char *name, float age, char *owner)
 		free(dog);
 		return (NULL);
 	}
-	dog->age = age;
+	dog->age = age;2
 	return (dog);
 }
