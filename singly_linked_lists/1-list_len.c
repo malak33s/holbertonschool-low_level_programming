@@ -1,18 +1,18 @@
 #include "lists.h"
 
 /**
-* list_len - function that count all element of a list
-*@h: input of start counting
+* list_lenn - write a function thaht count all element of a list
+*@h: input for start count
 */
 
-size_t list_len(const list_t *h)
+size_t list_lenn(const list_t *h)
 {
-	size_t elem = 0;
+	size_t e = 0;
 
 	while (h != NULL)
 	{
-		elem++;
+		e++;
 		h = h->next;
 	}
-	return (elem);
+	return (e);
 }
